@@ -18,6 +18,15 @@
 --lig: 75%;
 --second-hue: 219;
 
+--first-color: hsl(var(--first-hue), var(--sat), var(--lig));
+--first-color-alt: hsl(var(--first-hue), var(--sat), 71%); /* -4% */
+--title-color: hsl(var(--second-hue), 15%, 95%);
+--text-color: hsl(var(--second-hue), 8%, 75%);
+--text-color-light: hsl(var(--second-hue), 4%, 55%);
+--body-color: hsl(var(--second-hue), 48%, 8%);
+--container-color: hsl(var(--second-hue), 32%, 12%);
+
+/*
 --first-color: hsl( 219, 66%, 75%);
 --first-color-alt: hsl(219, 66%, 71%);
 --title-color: hsl(219, 15%, 95%);
@@ -25,7 +34,7 @@
 --text-color-light: hsl(219, 4%, 55%);
 --body-color: hsl(219, 48%, 8%);
 --container-color: hsl(219, 32%, 12%);
-
+*/
 /* ----------------Font and typography---------------*/
 /* .5rem = 8px | 1rem = 16px ... */
 --body-font: 'Poppins', sans-serif;
@@ -144,7 +153,7 @@ img{
     text-align: center;
 }
 
-.sectoin__title{
+.section__title{
     font-size: var(--h2-font-size);
     color: var(--first-color);
     margin-bottom: 2rem;
@@ -221,6 +230,12 @@ img{
 }
 
 /* --  Change background header  --*/
+.scroll-header{
+    box-shadow: 0 4px 4px hsla(0, 0%, 4%, .3);
+}
+
+/* ---------------- HOME ---------------*/
+
 .home__container{
     position: relative;
     row-gap: 4.5rem;
@@ -254,7 +269,6 @@ img{
 
 .home__img{
     width: 200vw;
-
 }
 
 .home__handle{
@@ -355,14 +369,218 @@ img{
     color: var(--first-color);
 }
 /* ---------------- ABOUT ---------------*/
+.about__container{
+    row-gap: 2.5rem;
+}
 
+.about__img{
+    width: 220px;
+    border-radius: 1.5rem;
+    justify-self: center;
+}
 
+.about__date{
+    text-align: center;
+}
+
+.about__info{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+    margin-bottom: 2rem;
+}
+
+.about__box{
+    background-color: var(--container-color);
+    border-radius: .75rem;
+    padding: .75rem .5rem;
+}
+
+.about__icon{
+    font-size: 1.5rem;
+    color: var(--first-color);
+    margin-bottom: .5rem;
+}
+
+.about__title{
+    font-size: var(--small-font-size);
+}
+
+.about__subtitle{
+    font-size: var(--tiny-font-size);
+}
+
+.about__description{
+    margin-bottom: 2rem;
+}
 /* ---------------- SKILLS ---------------*/
+.skills__container{
+    row-gap: 2rem;
+    padding-top: 1rem;
+}
 
+.skills__content{
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+}
 
+.skills__title{
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    color: var(--first-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.skills__box{
+    display: flex;
+    justify-content: center;
+    column-gap: 2.5rem;
+}
+
+.skills__group{
+    display: grid;
+    align-content: flex-start;
+    row-gap: 1rem;
+}
+
+.skills__date{
+    display: flex;
+    column-gap: .5rem;
+}
+
+.skills .bxs-badge-check {
+    font-size: 1rem;
+    color: var(--first-color);
+}
+
+.skills__name{
+    font-size: var(--onrmal-font-size);
+    font-weight: var(--font-medium);
+    line-height: 18px;
+}
+
+.skills__level{
+    font-size: var(--tiny-font-size);
+}
 /* ---------------- SERVICES ---------------*/
+.services__container{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding-top: 1rem;
+}   
 
-   
+.services__card{
+    background-color: var(--container-color);
+    padding: 3rem 1.5rem 1.5rem;
+    border-radius: 1rem;
+}
+
+.services__title{
+    font-size: var(--h3-font-size);
+    margin-bottom: 2.5rem;
+}
+
+.services__button{
+    color: var(--first-color);
+    font-size: var(--small-font-size);
+    display: flex;
+    align-items: center;
+    column-gap: .25rem;
+    cursor: pointer;
+}
+
+.services__button:hover .services__icon{
+    transform: translate(.25rem);
+}
+
+.services__icon{
+    font-size: 1rem;
+    transition: .4s;
+}
+
+
 /* ----- Services modal  ---- */
+.services__modal{
+    position: fixed;
+    inset: 0;
+    background-color: hsla(var(--second-hue), 28%, 16%, .7);
+    padding: 2rem 1rem;
+    display: grid;
+    place-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: .4s;
+    z-index: var(--z-model);
+}
 
- 
+.services__modal-content{
+    position: relative;
+    background-color: var(--body-color);
+    padding: 4.5rem 1.5rem 2.5rem;
+    border-radius: 1.5rem;
+}
+
+.services__modal-title,
+.services__modal-description{
+    text-align: center;
+}
+
+.services__modal-title{
+    font-size: var(--h3-font-size);
+    color: var(--first-color);
+    margin-bottom: 1rem;
+}
+
+.services__modal-description{
+    font-size: var(--small-font-size);
+    margin-bottom: 2rem;
+}
+
+.services__modal-list{
+    display: grid;
+    row-gap: .75rem;
+}
+
+.services__modal-item{
+    display: flex;
+    align-items: flex-start;
+    column-gap: .5rem;
+}
+
+.services__modal-icon{
+    font-size: 1.5rem;
+    color: var(--first-color);
+}
+
+.services__modal-info{
+    font-size: var(--small-font-size);
+}
+
+.services__modal-close{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--first-color);
+    cursor: pointer;
+}
+/* ----- active modal  ---- */
+.active-modal{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* -------------  work  ------------ */
+
+
+/* ----- active item work  ---- */
+
+
+/* ------------- TESTIMONIAL  --------- */
+
+
+/* ---------- Swiper class  --------- */
+
