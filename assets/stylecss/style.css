@@ -198,7 +198,7 @@ img{
 .nav__menu{
     position: fixed;
     bottom: 1rem;
-    background-color: hsl(219, 32%, 16%);
+    background-color: hsla(var(--second-hue), 32%, 16%, .8);
     width: 90%;
     border-radius: 4rem;
     padding: 1rem 2.25rem;
@@ -512,7 +512,7 @@ img{
     visibility: hidden;
     opacity: 0;
     transition: .4s;
-    z-index: var(--z-model);
+    z-index: 1000;
 }
 
 .services__modal-content{
@@ -568,7 +568,7 @@ img{
 }
 /* ----- active modal  ---- */
 .active-modal{
-    opacity: 1;
+    opacity: 100;
     visibility: visible;
 }
 
