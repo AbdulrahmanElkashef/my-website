@@ -76,3 +76,9 @@ let swiperTestimonial = new Swiper(".testimonial__container", {
 
 
 /*--------SCROLL SECTIONS ACTIVE LINK-------*/
+
+
+/*=============== LIGHT DARK THEME ===============*/ 
+
+
+/*=============== SCROLL REVEAL ANIMATION ===============*/
